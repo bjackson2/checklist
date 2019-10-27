@@ -18,7 +18,7 @@ const AddChecklist: React.FC<AddChecklistProps> = ({onSave}) => {
         placeholder="Checklist name"
         margin="normal"
         value={checklistName}
-        onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+        onChange={(event: React.ChangeEvent<HTMLInputElement>): void => {
           event.preventDefault();
           updateChecklistName(event.target.value);
         }}
@@ -27,9 +27,14 @@ const AddChecklist: React.FC<AddChecklistProps> = ({onSave}) => {
         color="primary"
         variant="extended"
         aria-label="Create Checklist"
-        onClick={() => {
+        onClick={(): void => {
           const newChecklists = [...checklists];
-          newChecklists.push({title: checklistName, categories: [], items: []});
+          newChecklists.push({
+            id: `checklist-${checklistName}`,
+            title: checklistName,
+            categories: [],
+            items: [],
+          });
           updateChecklists(newChecklists);
           onSave();
         }}

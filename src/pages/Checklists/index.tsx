@@ -18,7 +18,7 @@ const Checklists: React.FC = () => {
         </div>
       ))}
 
-      {isAdding && <AddChecklist onSave={() => updateIsAdding(false)} />}
+      {isAdding && <AddChecklist onSave={(): void => updateIsAdding(false)} />}
 
       <div>
         <Fab
@@ -26,7 +26,7 @@ const Checklists: React.FC = () => {
           variant="extended"
           aria-label="add"
           disabled={isAdding}
-          onClick={() => {
+          onClick={(): void => {
             updateIsAdding(true);
           }}
         >

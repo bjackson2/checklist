@@ -1,4 +1,5 @@
 interface Checklist {
+  id: string;
   title: string;
   categories: ChecklistCategory[];
   items: ChecklistItem[];
@@ -10,6 +11,7 @@ interface ChecklistCategory {
 }
 
 interface ChecklistItem {
+  id: string;
   description: string;
   isChecked: boolean;
 }

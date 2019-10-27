@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter, Link} from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Routes from './components/Routes';
 import ChecklistsProvider from './components/ChecklistsProvider';
